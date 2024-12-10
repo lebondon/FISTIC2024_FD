@@ -1,0 +1,39 @@
+adding a recort to the db:
+
+db.websites.insertOne({name:"homepage",url:"https://www.youtube.com/watch?v=ZuJUOUwvQPY",tags:["Jerma","teacher","noise"]});
+
+
+adding a record on the db with a certain id:
+
+db.websites.insertOne({name:"homepage", _id:"https://www.youtube.com/watch?v=ZuJUOUwvQPY",tags:["Jerma","teacher","noise"]});
+
+
+opening the shell to operate with the database:
+
+mongosh
+
+
+starting the database server in another windows:
+
+sudo systemctl start mongod
+mongod
+
+
+find a record in the database based on it's tag:
+
+db.websites.find({tags:"Jerma"})
+
+
+query che cerca in base al nome i record che hanno id 1 views 1(falsa l'ultima parte guarda meglio):
+
+db.websites.find({name:/Jerma/},{_id:1,views:1}) #test
+db.websites.find({name:/homepage/},{_id:1,views:1})     #questo mostra effetivamente le cose
+
+
+query che cerca tutti i documenti che hanno views maggiori di (lt : larger than) 5000 e prende quelli con id 1 e views 1(anche qua):
+
+db.websites.find({views:{$lt:5000}},{_id:1,views:1})
+
+
+
+
