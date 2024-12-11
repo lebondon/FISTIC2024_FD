@@ -1,4 +1,4 @@
-adding a recort to the db:
+adding a record to the db:
 
 db.websites.insertOne({name:"homepage",url:"https://www.youtube.com/watch?v=ZuJUOUwvQPY",tags:["Jerma","teacher","noise"]});
 
