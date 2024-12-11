@@ -1,0 +1,4 @@
+tutto sulle classi di python, ereditarietà ecc ecc, costruzione di pacchetti.
+
+fastapi, pytest, un dialetto SQL,
+Pymi, Pydantic
