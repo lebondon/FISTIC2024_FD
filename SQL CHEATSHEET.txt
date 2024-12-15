@@ -1,0 +1,65 @@
+SQL CHEATSHEET
+
+mockaroo to generate mock datasets
+
+\pset pager off		remove --more--
+
+\! cls			clear the terminal
+
+<>		not equal
+
+LIMIT 10; 	only print the first 10 records
+
+OFFSET 10	start printing the record skipping the first 10, can be used together with LIMIT	
+
+OFFSET 10 LIMIT 10 	prints the records 11-20
+
+FETCH 		similar to limit but a bit more verbose, look further.
+
+
+WHERE country_of_birth IN ('Spain','Mexico','China')		IN can be used to create a filter
+
+
+BETWEEN 0 AND 2
+
+
+SELECT * FROM person WHERE email LIKE '%.com' 	
+
+we are specifying the pattern here where % means "every character" and %.com means "every character followed by .com
+'%google.%' would mean "every string that has google. inside
+
+% is called a wildcard
+
+'____@%'	find me all emails that have 4 characters before the @,
+		underscore in this case is used as indicator of characters
+
+
+ILIKE 		has the same function but it's not case sensitive so:
+		SELECT * WHERE country_of_birth ILIKE 'p%' would return also the countries that start with P like Portugal
+
+
+
+SELECT country_of_birth COUNT(*) FROM person GROUP BY country_of_birth;		print the number of how many peoples per country, can also put a "order by" in front
+
+The COUNT() function returns the number of rows that matches a specified criterion, if you write the name of a column inside instead of * it ignores the null values
+
+using it with the WHERE function print out the total number of records that respect that clause 
+
+SELECT country_of_birth COUNT(*) FROM person GROUP BY country_of_birth HAVING COUNT(*)>5 ORDER BY country_of_birth;
+
+we can also use HAVING to put another filter over the groupby by explicitating to only print values that have more than 5 
+
+
+SELECT MAX(price) FROM cars;		print out the highest price found in the table
+there is also MIN AND AVG which does as specified
+
+
+SELECT ROUND(AVG(price)) FROM cars		round the decimals and gives back an int
+
+
+SELECT maker, AVG(price) GROUP BY maker		gives back the average price based on every car maker 
+
+
+SELECT SUM(price) FROM cars		sum of all prices in the table
+
+
