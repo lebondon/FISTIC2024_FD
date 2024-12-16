@@ -34,6 +34,9 @@ query che cerca tutti i documenti che hanno views maggiori di (lt : larger than)
 
 db.websites.find({views:{$lt:5000}},{_id:1,views:1})
 
+the id in mongo db is called '_id' so when you want to insert a new value and want to give it a specific id you gotta declare it as '_id':value
+else it just creates another column called id and gives you another unique _id
+
 
 
 
