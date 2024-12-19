@@ -54,12 +54,97 @@ SELECT MAX(price) FROM cars;		print out the highest price found in the table
 there is also MIN AND AVG which does as specified
 
 
-SELECT ROUND(AVG(price)) FROM cars		round the decimals and gives back an int
+SELECT ROUND(AVG(price)) FROM cars		round the decimals and gives back an int	ROUND(AVG(price),2)		rounds to two decimals
 
 
 SELECT maker, AVG(price) GROUP BY maker		gives back the average price based on every car maker 
 
 
 SELECT SUM(price) FROM cars		sum of all prices in the table
+
+
+you can also use arythmetic operators like +, -, *, /, %(gives back the remainder of a division), !(factorial)
+
+ex: SELECT 10+2		-> 		12
+
+
+SELECT id, make, model, (price * .10 ) FROM cars		creates another column with price of each row multiplied per 0.10, you can also round that.
+the name of the new column will be ?column? in this case or round if we use the round function since as placeholder name it uses the function used to create it.
+
+you can use the AS keyword to change the column name:
+
+SELECT id, make, price AS original_price, (price *.10) AS discount FROM cars;
+
+
+if we have a column with null values that we want to fill with certain default values we can use COALESCE
+
+SELECT COALESCE(email, 'Email not given')	will fill all the null values of the email column with that string of characters,
+
+COALESCE can have multiple values to be put by default for example if the first is not found it will pass to the next one COALESCE(email, null, 2)
+
+
+if we are dealing for example with operations that may cause errors (like dividing by 0), we can use NULLIF
+
+NULLIF()	return null if the first argument is equal to the second one
+NULLIF(10,10)	->null
+NULLIF(1-10)	->null
+
+SELECT 10/null in postgres return null and not an error!
+
+SELECT 10/NULLIF(0,0)	->null
+SELECT COALESCE(10/NULLIF(0,0),0)	->null
+
+
+SELECT NOW()		return the timestamp of the current time
+
+SELECT NOW()::DATE 		we are casting the timestamp to a date format		(:: is casting)
+
+SELECT NOW()::TIME 		we are casting the timestamp to only time (keeps hours, minutes, seconds and milliseconds)
+
+
+we can also do operations with dates like:
+
+SELECT NOW() - INTERVAL '1 YEAR';		sottrae un anno al timestamp corrente
+SELECT NOW() - INTERVAL '10 MONTHS';	sottrae 10 mesi al timestamp corrente
+
+and cast it to dates	SELECT (NOW() - INTERVAL '10 MONTHS')::DATE
+
+
+we can also extract the various part of a timestamp with EXTRACT:
+
+SELECT EXTRACT(YEAR FROM NOW());	
+SELECT EXTRACT(MONTH FROM NOW())		there are various keywords that we can use
+ecc. ecc.
+
+
+we can use the AGE() function to calculate age dinamically based on DOB and now():
+
+SELECT id,name,surname, date_of_birth, AGE(NOW(),date_of_birth) FROM person;	as output it will give back the subtraction between NOW() and date_of_birth (not in timestamp format!)
+
+
+we can add and remove the primary key constraint so that an error won't be thrown when we insert the same value as primary key.
+
+removing:	ALTER TABLE person DROP CONSTRAINT ...		placeholder 
+
+adding:		ALTER TABLE person ADD PRIMARY KEY(id);		we can add more than one argument in the parenthesis and have more than one primary key
+
+
+
+we can add constraints to the tables like making so a certain column can only have unique values, ex:emails;
+
+ALTER TABLE person ADD CONSTRAINT unique_email_address UNIQUE (email)		we can have more than one argument in the parenthesis so that more than one column will have that constraint
+
+
+we can also add constraints where a column can only have a certain set of values:
+
+ALTER TABLE person ADD CONSTRAINT gender_constraint CHECK(gender=='Female' OR gender=='Male);
+
+
+DELETE FROM person WHERE id=1011;		delete a record from the table
+
+DELETE FROM person;		delete the entire table
+
+
+UPDATE person SET name = 'Pinco' WHERE id=200		updating records in the table, you can choose more values to update and can omit the where clause to selecy the whole table
 
 
