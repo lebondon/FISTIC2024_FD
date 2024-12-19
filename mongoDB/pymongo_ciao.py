@@ -168,4 +168,18 @@ result=usersCollection.find(query)
 for user in result:
     print(user)
 
+print("stop")
+query={"nome":{"$regex":"ino$"},"cognome":{"$regex":"ba","$options":"i"}}
+values={"$set":{"nome":"Pipo"}}
+result=usersCollection.find(query)
+for user in result:
+    print(user)
+
+usersCollection.update_one(query,value)
+result=usersCollection.find({})
+
+print("pino updatato a pipo")
+for users in result:
+    print(user)
+
 
