@@ -8,6 +8,8 @@ mockaroo to generate mock datasets
 
 <>		not equal
 
+code 0 1 means we have affected one row 
+
 LIMIT 10; 	only print the first 10 records
 
 OFFSET 10	start printing the record skipping the first 10, can be used together with LIMIT	
@@ -146,5 +148,36 @@ DELETE FROM person;		delete the entire table
 
 
 UPDATE person SET name = 'Pinco' WHERE id=200		updating records in the table, you can choose more values to update and can omit the where clause to selecy the whole table
+
+
+ON CONFLICT(column) DO NOTHING;		to ignore the constraints for that specific column so that postgres doesn't give back an error when you execute an operation es:
+
+INSERT INTO person(id,name) VALUES(1,'Gianni)		nella tabella abbiamo un id Big serial e chiave primaria che che quindi deve essere univoca e quando
+ON CONFLICT DO NOTHING;													eseguiremo questa operazione non ritornerà un errore ma la nostra query non avrà effetto, funziona anche con constraint tipo unique
+													ritornerà codice 0 0 che significa nessun effetto
+
+
+you can also deal with conflict by updating certain values by the new ones inserted:
+
+INSERT INTO person(id,name,surname) VALUES(1,'Gianni','Chiarugolo')
+ON CONFLICT DO UPDATE SET name=EXCLUDED.name, surname=EXCLUDED.surname;			tramite questo codice gli stiamo dicendo di modificare i valori di name e surname con quelli in entrata.
+																				potevamo scegliere anche solo name o surname
+
+
+adding a foreign key that reference another column_id:
+
+CREATE TABLE car(
+	id BIGSERIAL NOT NULL PRIMARY KEY,
+	model VARCHAR(50)							
+)
+
+CREATE TABLE user(
+	id BIGSERIAL NOT NULL PRIMARY KEY,
+	name VARCHAR(50),
+	car_id BIGINT REFERENCES car (id),			we are creating a car_id column that is a foreign key to the primary key in the car table 	
+	UNIQUE(car_id)
+)
+
+
 
 
