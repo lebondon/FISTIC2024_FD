@@ -1,0 +1,13 @@
+Datetime (UTC),Country,Zone Name,Zone Id,Carbon Intensity gCO₂eq/kWh (direct),Carbon Intensity gCO₂eq/kWh (LCA),Low Carbon Percentage,Renewable Percentage,Data Source
+2024-01-01 00:00:00,Italy,North Italy,IT-NO,234.60,301.99,51.08,36.09,entsoe.eu
+2024-02-01 00:00:00,Italy,North Italy,IT-NO,218.95,283.22,54.67,37.04,entsoe.eu
+2024-03-01 00:00:00,Italy,North Italy,IT-NO,201.52,261.94,58.69,44.82,entsoe.eu
+2024-04-01 00:00:00,Italy,North Italy,IT-NO,165.97,216.86,67.14,56.43,Electricity Maps Estimation; entsoe.eu
+2024-05-01 00:00:00,Italy,North Italy,IT-NO,135.32,177.36,74.38,61.41,entsoe.eu
+2024-06-01 00:00:00,Italy,North Italy,IT-NO,134.99,176.02,74.44,63.16,entsoe.eu
+2024-07-01 00:00:00,Italy,North Italy,IT-NO,163.95,212.74,67.06,54.52,entsoe.eu
+2024-08-01 00:00:00,Italy,North Italy,IT-NO,181.05,237.83,62.34,48.86,Electricity Maps Estimation; entsoe.eu
+2024-09-01 00:00:00,Italy,North Italy,IT-NO,196.22,255.74,58.82,45.64,entsoe.eu
+2024-10-01 00:00:00,Italy,North Italy,IT-NO,178.46,230.32,63.78,50.16,entsoe.eu
+2024-11-01 00:00:00,Italy,North Italy,IT-NO,237.74,308.88,48.69,34.60,Electricity Maps Estimation; entsoe.eu
+2024-12-01 00:00:00,Italy,North Italy,IT-NO,250.91,326.46,45.40,30.12,Electricity Maps Estimation; entsoe.eu
