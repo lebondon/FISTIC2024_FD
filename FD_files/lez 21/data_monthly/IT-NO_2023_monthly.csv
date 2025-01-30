@@ -1,0 +1,13 @@
+Datetime (UTC),Country,Zone Name,Zone Id,Carbon Intensity gCO₂eq/kWh (direct),Carbon Intensity gCO₂eq/kWh (LCA),Low Carbon Percentage,Renewable Percentage,Data Source
+2023-01-01 00:00:00,Italy,North Italy,IT-NO,291.22,364.91,43.20,28.73,entsoe.eu
+2023-02-01 00:00:00,Italy,North Italy,IT-NO,297.14,373.95,41.78,28.16,entsoe.eu
+2023-03-01 00:00:00,Italy,North Italy,IT-NO,288.69,364.21,43.21,30.79,entsoe.eu
+2023-04-01 00:00:00,Italy,North Italy,IT-NO,223.82,292.80,52.83,35.73,entsoe.eu
+2023-05-01 00:00:00,Italy,North Italy,IT-NO,182.45,239.55,62.35,50.49,entsoe.eu
+2023-06-01 00:00:00,Italy,North Italy,IT-NO,204.77,263.45,58.89,50.11,entsoe.eu
+2023-07-01 00:00:00,Italy,North Italy,IT-NO,209.55,273.92,55.66,45.50,entsoe.eu
+2023-08-01 00:00:00,Italy,North Italy,IT-NO,206.27,267.37,58.18,49.78,entsoe.eu
+2023-09-01 00:00:00,Italy,North Italy,IT-NO,230.94,297.81,51.96,40.54,entsoe.eu
+2023-10-01 00:00:00,Italy,North Italy,IT-NO,215.20,278.79,54.65,38.97,entsoe.eu
+2023-11-01 00:00:00,Italy,North Italy,IT-NO,199.38,256.70,59.25,45.90,entsoe.eu
+2023-12-01 00:00:00,Italy,North Italy,IT-NO,233.78,300.37,50.91,37.49,entsoe.eu
