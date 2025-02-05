@@ -1,0 +1,32 @@
+Problem Statement
+
+Build a machine learning model to predict whether the shipment will arrive on time or not. ( column ‘Reached.on.Time_Y.N’ from the attached data needs to be predicted ) 
+You can consider that shipment which would arrive late is a higher risk for business.
+
+Metadata
+
+ID: Unique identifier for each shipment.
+Warehouse_block: The block from which the product was shipped.
+Mode_of_Shipment: The mode of shipment (e.g., Flight, Ship, Road).
+Customer_care_calls: Number of calls made by the customer.
+Customer_rating: Rating given by the customer (1 to 5).
+Cost_of_the_Product: Cost of the product being shipped.
+Prior_purchases: Number of prior purchases made by the customer.
+Product_importance: Importance of the product (low, medium, high).
+Gender: Gender of the customer (Male/Female).
+Discount_offered: Discount offered on the product.
+Weight_in_gms: Weight of the product in grams.
+Reached.on.Time_Y.N: Whether the shipment reached on time (1 = Yes, 0 = No).
+
+Devlop a machine learning pipeline:
+- EDA
+- Feature selection
+- Modeling
+- Fine tuning
+- Model evaluation
+
+Use f1 score as eval metrics and comment obtained results:
+ex. What are risk factors? How well does the model work?
+
+
+! USE RANDOM STATE = 40 AS SEED FOR TRAIN TEST SPLIT !
